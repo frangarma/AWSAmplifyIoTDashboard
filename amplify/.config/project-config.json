@@ -1,0 +1,19 @@
+{
+  "projectName": "ingarmatelecontrol",
+  "version": "3.1",
+  "frontend": "javascript",
+  "javascript": {
+    "framework": "react",
+    "config": {
+      "SourceDir": "frontend/iot-dashboard/src",
+      "DistributionDir": "frontend/iot-dashboard/build",
+      "BuildCommand": "npm.cmd run-script build",
+      "StartCommand": "npm.cmd run-script start"
+    }
+  },
+  "providers": [
+    "awscloudformation"
+  ],
+  "useProfile": true,
+  "profileName": "default"
+}

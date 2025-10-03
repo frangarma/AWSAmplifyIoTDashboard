@@ -51,11 +51,11 @@ function App() {
           <main>
             <h3>Control de dispositivos</h3>
             <div>
-              <button onClick={() => sendCommand('d_000', 'on')}>🔌 Encender reles</button>
+              <button onClick={() => sendCommand('d_000', "\"on\"")}>🔌 Encender reles</button>
               <button onClick={() => sendCommand('d_000', 'off')}>⛔ Apagar reles</button>
             </div>
             {/* 📩 Aquí mostramos los mensajes del WebSocket */}
-            <WebSocketMessages />
+            {/*<WebSocketMessages />*/}
           </main>
 
           <button className="logout-button" onClick={signOut}>Cerrar sesión</button>
@@ -113,25 +113,22 @@ function WebSocketMessages() {
     return () => ws.close();
   }, []);
 
-return (
-  <div style={{ marginTop: '20px', textAlign: 'left' }}>
-    <h4>Mensajes recibidos IoT:</h4>
-    <div style={{
-      background: '#f4f4f4',
-      padding: '10px',
-      borderRadius: '8px',
-      maxHeight: '200px',
-      overflowY: 'auto',
-      fontSize: '14px'
-    }}>
-      {messages.map((msg, idx) => (
-        <div key={idx} style={{ marginBottom: '8px', padding: '6px', borderBottom: '1px solid #ccc' }}>
-          <strong>topic:</strong> {msg.topic || "unknown"} <br />
-          <strong>payload:</strong> {typeof msg.payload === "object" ? JSON.stringify(msg.payload) : msg.payload}
-        </div>
-      ))}
+  return (
+    <div style={{ marginTop: '20px', textAlign: 'left' }}>
+      <h4>Mensajes recibidos:</h4>
+      <div style={{
+        background: '#f4f4f4',
+        padding: '10px',
+        borderRadius: '8px',
+        maxHeight: '200px',
+        overflowY: 'auto',
+        fontSize: '14px'
+      }}>
+        {messages.map((msg, idx) => (
+          <pre key={idx}>{JSON.stringify(msg, null, 2)}</pre>
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
 }
 // 🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼

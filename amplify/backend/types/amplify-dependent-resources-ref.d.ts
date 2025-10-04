@@ -1,10 +1,8 @@
 export type AmplifyDependentResourcesAttributes = {
   "auth": {
-    "ingarmatelecontrolda976317": {
+    "ingarmatelecontrola16ab429a16ab429": {
       "AppClientID": "string",
       "AppClientIDWeb": "string",
-      "IdentityPoolId": "string",
-      "IdentityPoolName": "string",
       "UserPoolArn": "string",
       "UserPoolId": "string",
       "UserPoolName": "string"

@@ -1,10 +1,8 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "ingarmatelecontrolda976317_identitypool_da976317",
-    "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "ingarmda976317",
-    "userPoolName": "ingarmatelecontrolda976317_userpool_da976317",
+    "resourceNameTruncated": "ingarma16ab429",
+    "userPoolName": "ingarmatelecontrola16ab429_userpool_a16ab429",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,12 +29,16 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "ingarmda976317_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "ingarma16ab429_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "da976317",
-    "resourceName": "ingarmatelecontrolda976317",
-    "authSelections": "identityPoolAndUserPool",
-    "useDefault": "default",
+    "sharedId": "a16ab429",
+    "resourceName": "ingarmatelecontrola16ab429a16ab429",
+    "authSelections": "userPoolOnly",
+    "useDefault": "manual",
+    "userPoolGroups": false,
+    "adminQueries": false,
+    "triggers": {},
+    "hostedUI": false,
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,

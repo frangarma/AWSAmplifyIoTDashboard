@@ -4,7 +4,9 @@ import './App.css';
 import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import logo from './file.png'; // Asegúrate de que file.png está en src/
-import Amplify, { PubSub } from 'aws-amplify';
+import WebSocketMessages from "./WebSocketMessages";
+
+
 
 
 function App() {
@@ -88,50 +90,3 @@ async function sendCommand(deviceId, value) {
 }
 
 export default App;
-
-// 🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽
-// 🔹 Añadido para WebSocket: muestra mensajes recibidos
-function WebSocketMessages() {
-  const [messages, setMessages] = useState([]);
-
-  useEffect(() => {
-    // ⚠️ Usa tu endpoint WebSocket aquí (wss://...)
-    const ws = new WebSocket('wss://o3ppujthph.execute-api.eu-west-1.amazonaws.com/production');
-
-    ws.onmessage = (event) => {
-      try {
-        const data = JSON.parse(event.data);
-        setMessages(prev => [...prev, data]);
-      } catch (e) {
-        console.error("Error parsing WS message", e);
-      }
-    };
-
-    ws.onopen = () => console.log("✅ Conectado a WebSocket");
-    ws.onclose = () => console.log("❌ WebSocket cerrado");
-
-    return () => ws.close();
-  }, []);
-
-return (
-  <div style={{ marginTop: '20px', textAlign: 'left' }}>
-    <h4>Mensajes recibidos IoT:</h4>
-    <div style={{
-      background: '#f4f4f4',
-      padding: '10px',
-      borderRadius: '8px',
-      maxHeight: '200px',
-      overflowY: 'auto',
-      fontSize: '14px'
-    }}>
-      {messages.map((msg, idx) => (
-        <div key={idx} style={{ marginBottom: '8px', padding: '6px', borderBottom: '1px solid #ccc' }}>
-          <strong>topic:</strong> {msg.topic || "unknown"} <br />
-          <strong>payload:</strong> {typeof msg.payload === "object" ? JSON.stringify(msg.payload) : msg.payload}
-        </div>
-      ))}
-    </div>
-  </div>
-);
-}
-// 🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼

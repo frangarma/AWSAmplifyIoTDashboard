@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ingarmatelecontrol-dev-2ca50-authRole",
+      "UnauthRoleArn": "arn:aws:iam::650155821886:role/amplify-ingarmatelecontrol-dev-2ca50-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::650155821886:role/amplify-ingarmatelecontrol-dev-2ca50-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-ingarmatelecontrol-dev-2ca50-deployment",
+      "UnauthRoleName": "amplify-ingarmatelecontrol-dev-2ca50-unauthRole",
+      "StackName": "amplify-ingarmatelecontrol-dev-2ca50",
+      "StackId": "arn:aws:cloudformation:eu-west-1:650155821886:stack/amplify-ingarmatelecontrol-dev-2ca50/5dd8fb20-a142-11f0-9948-06611a173dd7",
+      "AmplifyAppId": "d1b5rb5r4mmjt9"
+    },
+    "categories": {
+      "auth": {
+        "ingarmatelecontrol8ab74581": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d1b5rb5r4mmjt9",
+          "type": "manual"
+        }
+      }
+    }
+  }
+}
